@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://b1mip25lplk34"]
+
+[ext_resource type="Texture2D" uid="uid://dt8l2ashtqn1e" path="res://textures/platform/Terrain (32x32).png" id="1_2kxy7"]
+[ext_resource type="Script" path="res://level/platform.gd" id="1_dnyat"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bt44f"]
+size = Vector2(95, 12)
+
+[node name="Platform" type="CharacterBody2D"]
+top_level = true
+scale = Vector2(2, 1)
+script = ExtResource("1_dnyat")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_2kxy7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+light_mask = 31
+visibility_layer = 0
+position = Vector2(-0.5, -10)
+shape = SubResource("RectangleShape2D_bt44f")

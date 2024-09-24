@@ -1,0 +1,39 @@
+[gd_scene load_steps=6 format=3 uid="uid://c0uunvbx5xqsi"]
+
+[ext_resource type="Script" path="res://level/level.gd" id="1_c7ulc"]
+[ext_resource type="PackedScene" uid="uid://c2evpihqndrib" path="res://background.tscn" id="2_bavh8"]
+[ext_resource type="PackedScene" uid="uid://bl02vhsy3h0c3" path="res://character/player.tscn" id="2_tth2k"]
+[ext_resource type="Script" path="res://level/camera_2d.gd" id="3_lqqdv"]
+[ext_resource type="PackedScene" uid="uid://b1mip25lplk34" path="res://level/platform.tscn" id="4_gymdj"]
+
+[node name="level" type="Node2D"]
+position = Vector2(0, -1341)
+script = ExtResource("1_c7ulc")
+
+[node name="ParallaxBackground" parent="." instance=ExtResource("2_bavh8")]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(358, 735)
+script = ExtResource("3_lqqdv")
+
+[node name="Label" type="Label" parent="Camera2D"]
+offset_left = -325.0
+offset_top = -133.0
+offset_right = -279.0
+offset_bottom = -110.0
+text = "Scope"
+
+[node name="Player" parent="." instance=ExtResource("2_tth2k")]
+position = Vector2(358, 1275)
+
+[node name="Platform4" parent="." instance=ExtResource("4_gymdj")]
+position = Vector2(71, 20)
+
+[node name="Platform5" parent="." instance=ExtResource("4_gymdj")]
+position = Vector2(263, 20)
+
+[node name="Platform6" parent="." instance=ExtResource("4_gymdj")]
+position = Vector2(456, 20)
+
+[node name="Platform7" parent="." instance=ExtResource("4_gymdj")]
+position = Vector2(648, 20)
